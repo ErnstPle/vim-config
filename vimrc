@@ -1,6 +1,5 @@
 " Set up taken from https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
 " With this set-up you can install plugins by simply use the command :PluginInstall
-"hihi
 
 " Make search case insensitive
 set hlsearch
