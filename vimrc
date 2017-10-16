@@ -1,5 +1,9 @@
 " Set up taken from https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/
+
 " With this set-up you can install plugins by simply use the command :PluginInstall
+" Vundle needs some manual installation 
+" $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 
 " Make search case insensitive
 set hlsearch
@@ -7,6 +11,7 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Here we have some edits
 
 " Disable backup and swap files - they trigger too many events
 " for file system watchers
