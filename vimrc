@@ -4,7 +4,6 @@
 " Vundle needs some manual installation 
 " $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-
 " Make search case insensitive
 set hlsearch
 set incsearch
@@ -19,15 +18,12 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-
 set nocompatible              " required
 filetype off                  " required
-
 
 " Unnecessary Whitespace
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertLeave * match ExtraWhitespace /\s\+$/
-
 
 set nu " insert line numbering
 " set the runtime path to include Vundle and initialize
@@ -41,7 +37,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
