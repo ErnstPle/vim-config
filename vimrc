@@ -58,6 +58,8 @@ nnoremap <C-H> <C-W><C-H>
  set foldlevel=99
  " Enable folding with the spacebar
  nnoremap <space> za
+" remap the esc key and enable jj
+imap jj <esc>
 
 " Proper PEP8 indentation
 " au BufNewFile,BufRead *.py
