@@ -8,7 +8,7 @@
 "                                                                              "
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-let $vimhome=fnamemodify(resolve(expand("~/.vimrc")), ':p:h')
+let $vimhome=fnamemodify(resolve(expand("~/.vim")), ':p:h')
 let $vundle=$vimhome."/bundle/Vundle.vim"
 
 " Be iMproved
@@ -47,7 +47,7 @@ call vundle#begin()
     Plugin 'tpope/vim-commentary'               " Comment stuff out
     Plugin 'mitsuhiko/vim-sparkup'              " Sparkup(XML/jinja/htlm-django/etc.) support
     Plugin 'Rykka/riv.vim'                      " ReStructuredText plugin
-"    Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
+    Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
 
     "-------------------=== Python  ===-----------------------------
     Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
@@ -93,10 +93,18 @@ set clipboard=unnamed                       " use system clipboard
 
 set exrc                                    " enable usage of additional .vimrc files from working directory
 set secure                                  " prohibit .vimrc files to execute shell, create files, etc...
-
+""
 " Additional mappings for Esc (useful for MacBook with touch bar)
 inoremap jj <Esc>
 inoremap jk <Esc>
+
+" Add more natural navigation between windows instead of shift + w, use <ctrl>
+" + j,k,l,h
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 
 "=====================================================
 "" Tabs / Buffers settings
