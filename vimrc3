@@ -8,6 +8,10 @@
 "                                                                              "
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
+" Template taken from https://www.youtube.com/watch?v=7o9yiHO7gHM
+" minor modifications
+
+
 let $vimhome=fnamemodify(resolve(expand("~/.vim")), ':p:h')
 let $vundle=$vimhome."/bundle/Vundle.vim"
 
