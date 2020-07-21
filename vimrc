@@ -8,10 +8,6 @@
 "                                                                              "
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-" Template taken from https://www.youtube.com/watch?v=7o9yiHO7gHM
-" minor modifications
-
-
 let $vimhome=fnamemodify(resolve(expand("~/.vim")), ':p:h')
 let $vundle=$vimhome."/bundle/Vundle.vim"
 
@@ -38,7 +34,7 @@ call vundle#begin()
     Plugin 'Lokaltog/powerline'                 " Powerline fonts plugin
     Plugin 'fisadev/FixedTaskList.vim'          " Pending tasks list
     Plugin 'rosenfeld/conque-term'              " Consoles as buffers
-    Plugin 'tpope/vim-surround'                 " Parentheses, brackets, quotaes, XML tags, and more
+    Plugin 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
     Plugin 'flazz/vim-colorschemes'             " Colorschemes
 
     "-------------------=== Snippets support ===--------------------
@@ -51,11 +47,15 @@ call vundle#begin()
     Plugin 'tpope/vim-commentary'               " Comment stuff out
     Plugin 'mitsuhiko/vim-sparkup'              " Sparkup(XML/jinja/htlm-django/etc.) support
     Plugin 'Rykka/riv.vim'                      " ReStructuredText plugin
-    Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
+"   Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
 
     "-------------------=== Python  ===-----------------------------
     Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
     Plugin 'scrooloose/syntastic'               " Syntax checking plugin for Vim
+
+    "-------------------=== React  ===-----------------------------
+    "https://vimawesome.com/plugin/vim-jsx-pretty
+    Plugin 'maxmellon/vim-jsx-pretty'           " Plugin for React development
 
 call vundle#end()                           " required
 filetype on
@@ -69,6 +69,7 @@ syntax enable                               " syntax highlight
 
 set t_Co=256                                " set 256 colors
 colorscheme wombat256mod                    " set color scheme
+set mouse=v                                 " copying and pasting with mouse
 
 set number                                  " show line numbers
 set relativenumber                          " show relative line numbers
@@ -94,7 +95,7 @@ set backspace=indent,eol,start              " backspace removes all (indents, EO
 
 set scrolloff=10                            " let 10 lines before/after cursor during scroll
 
-set clipboard=unnamed                       " use system clipboard
+set clipboard=unnamedplus,unnamed,autoselect " use system clipboard
 
 set exrc                                    " enable usage of additional .vimrc files from working directory
 set secure                                  " prohibit .vimrc files to execute shell, create files, etc...
@@ -243,11 +244,16 @@ let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 
+"=====================================================
+" React JSX settings
+"=====================================================
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
+
 " YouCompleteMe
-set completeopt-=preview
+"set completeopt-=preview
 
-let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0
+"let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf=0
 
-nmap <leader>g :YcmCompleter GoTo<CR>
-nmap <leader>d :YcmCompleter GoToDefinition<CR>
+"nmap <leader>g :YcmCompleter GoTo<CR>
+"nmap <leader>d :YcmCompleter GoToDefinition<CR>
