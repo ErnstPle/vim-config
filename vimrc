@@ -54,6 +54,8 @@ call vundle#begin()
 
     "-------------------=== React  ===-----------------------------
     "https://vimawesome.com/plugin/vim-jsx-pretty
+    "https://github.com/yuezk/vim-js
+    Plugin 'yuezk/vim-js'
     Plugin 'maxmellon/vim-jsx-pretty'           " Plugin for React development
 
 call vundle#end()                           " required
@@ -271,4 +273,5 @@ let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 "=====================================================
 " React JSX settings
 "=====================================================
-let g:vim_jsx_pretty_colorful_config = 1 " default 0
+let g:vim_jsx_pretty_colorful_config = 1 "default 0
+let g:vim_jsx_pretty_highlight_close_tag = 1 "Support highlighting the close tag separately from the open tag 
