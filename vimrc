@@ -47,7 +47,6 @@ call vundle#begin()
     Plugin 'tpope/vim-commentary'               " Comment stuff out
     Plugin 'mitsuhiko/vim-sparkup'              " Sparkup(XML/jinja/htlm-django/etc.) support
     Plugin 'Rykka/riv.vim'                      " ReStructuredText plugin
-"   Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
 
     "-------------------=== Python  ===-----------------------------
     Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
@@ -134,6 +133,31 @@ let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline_powerline_fonts=1
+" air-line
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+" airline symbols
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = ' '
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = ' '
+let g:airline_symbols.branch = ' '
+let g:airline_symbols.readonly = ' '
+let g:airline_symbols.linenr = ' '
 
 "=====================================================
 "" TagBar settings
@@ -248,12 +272,3 @@ let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 " React JSX settings
 "=====================================================
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
-
-" YouCompleteMe
-"set completeopt-=preview
-
-"let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
-"let g:ycm_confirm_extra_conf=0
-
-"nmap <leader>g :YcmCompleter GoTo<CR>
-"nmap <leader>d :YcmCompleter GoToDefinition<CR>
