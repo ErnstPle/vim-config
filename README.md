@@ -9,12 +9,12 @@
 
 " Added more natural navigation between windows instead of shift + w, use <ctrl>
 " + j,k,l,h, (:vs or :split)
-<div class="text-gray mb-2">
+
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-  </div>
+
 " Added relative Numbering 
 ---------------------------
 set relativenumber                          " show relative line numbers
